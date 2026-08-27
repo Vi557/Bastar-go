@@ -1,231 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bastar Go | Local Ride</title>
+<title>Bastar Go | Local Ride & Delivery</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif;
 }
 
 body{
-  background:#f4f6f8;
-  color:#17202a;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7ef;
+  color:#12352b;
 }
 
 header{
-  background:#111827;
-  color:white;
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:100;
+  background:#063f2d;
+  color:white;
+  padding:14px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 3px 15px #0002;
 }
 
 .logo{
-  font-size:27px;
+  font-size:28px;
   font-weight:800;
 }
 
 .logo span{
-  color:#22c55e;
+  color:#f5c542;
+}
+
+.location{
+  font-size:13px;
+  color:#d8eadf;
+  margin-top:3px;
 }
 
 .header-btn{
-  background:#22c55e;
-  color:white;
+  background:#f5c542;
+  color:#163b2d;
   border:0;
   padding:13px 20px;
   border-radius:12px;
-  font-size:16px;
-  font-weight:700;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .hero{
-  background:#111827;
+  padding:55px 6% 40px;
+  background:
+    linear-gradient(#073f2ddd,#073f2ddd),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80");
+  background-size:cover;
+  background-position:center;
   color:white;
-  padding:45px 22px 55px;
-  text-align:center;
 }
 
 .hero h1{
-  font-size:42px;
-  line-height:1.1;
-  margin-bottom:14px;
+  font-size:clamp(40px,8vw,72px);
+  line-height:1;
+  max-width:700px;
 }
 
 .hero h1 span{
-  color:#22c55e;
+  color:#f5c542;
 }
 
 .hero p{
-  color:#cbd5e1;
-  font-size:18px;
-  line-height:1.5;
-  margin-bottom:25px;
+  font-size:19px;
+  line-height:1.6;
+  max-width:650px;
+  margin:20px 0 25px;
+  color:#e6f2eb;
 }
 
-.main-btn{
-  display:inline-block;
-  background:#22c55e;
-  color:white;
-  text-decoration:none;
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.primary{
+  background:#f5c542;
+  color:#12352b;
   border:0;
-  padding:16px 35px;
-  border-radius:13px;
-  font-size:18px;
+  padding:16px 24px;
+  border-radius:14px;
+  font-size:17px;
   font-weight:800;
+  cursor:pointer;
+}
+
+.secondary{
+  background:white;
+  color:#075338;
+  border:0;
+  padding:16px 24px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
 }
 
 .section{
-  padding:35px 18px;
+  padding:45px 6%;
 }
 
-.section h2{
+.section-title{
   text-align:center;
-  font-size:30px;
-  margin-bottom:25px;
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.section-sub{
+  text-align:center;
+  color:#63736c;
+  margin-bottom:30px;
 }
 
 .services{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  max-width:850px;
-  margin:auto;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
 }
 
 .service{
   background:white;
-  border-radius:18px;
-  padding:25px 12px;
+  border-radius:20px;
+  padding:25px 18px;
   text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
+  border:1px solid #dce7df;
+  box-shadow:0 5px 20px #173c2b10;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.service:hover{
+  transform:translateY(-4px);
 }
 
 .service .icon{
-  font-size:42px;
+  font-size:48px;
   margin-bottom:12px;
 }
 
 .service h3{
-  font-size:18px;
+  font-size:21px;
   margin-bottom:7px;
 }
 
 .service p{
-  color:#64748b;
-  font-size:13px;
-  line-height:1.4;
+  color:#6b7973;
+  font-size:14px;
+  line-height:1.5;
 }
 
 .booking{
-  max-width:600px;
-  margin:10px auto 0;
-  background:white;
-  padding:25px;
-  border-radius:22px;
-  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  background:#063f2d;
+  padding:45px 6%;
 }
 
-.booking h2{
-  text-align:left;
+.booking-box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 15px 40px #0003;
+}
+
+.booking-box h2{
+  text-align:center;
+  margin-bottom:22px;
+  font-size:30px;
+}
+
+.service-select{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
   margin-bottom:20px;
 }
 
-label{
-  display:block;
-  font-weight:700;
-  margin:15px 0 7px;
+.service-option{
+  border:2px solid #dce5df;
+  border-radius:12px;
+  padding:11px 5px;
+  background:#fff;
+  cursor:pointer;
+  text-align:center;
+  font-weight:bold;
+  color:#21443a;
 }
 
-select,input{
+.service-option.active{
+  border-color:#087447;
+  background:#e8f5ed;
+  color:#075338;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+.field label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.field input,
+.field select{
   width:100%;
-  padding:16px;
-  border:1px solid #d1d5db;
+  padding:15px;
+  border:1px solid #ccd8d1;
   border-radius:12px;
   font-size:16px;
   outline:none;
-  background:white;
 }
 
-select:focus,input:focus{
-  border-color:#22c55e;
+.field input:focus{
+  border-color:#087447;
+}
+
+.fare{
+  background:#f2f7f2;
+  border-radius:14px;
+  padding:15px;
+  margin:10px 0 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.fare strong{
+  font-size:24px;
+  color:#087447;
 }
 
 .book-btn{
   width:100%;
-  margin-top:22px;
-  padding:17px;
-  background:#22c55e;
+  background:#087447;
   color:white;
   border:0;
+  padding:17px;
   border-radius:13px;
-  font-size:18px;
-  font-weight:800;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.nature{
+  background:#e7f0df;
+}
+
+.nature-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.nature-image{
+  height:320px;
+  border-radius:25px;
+  background:
+    linear-gradient(#0003,#0003),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80");
+  background-size:cover;
+  background-position:center;
+}
+
+.nature-text h2{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.nature-text p{
+  color:#50645b;
+  line-height:1.7;
+  font-size:17px;
+}
+
+.points{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.point{
+  background:white;
+  padding:15px;
+  border-radius:13px;
+  font-weight:bold;
 }
 
 .help{
   text-align:center;
-  padding:35px 20px 50px;
+  padding:45px 6%;
 }
 
 .help h2{
-  font-size:30px;
+  font-size:34px;
   margin-bottom:10px;
 }
 
 .help p{
-  color:#64748b;
+  color:#66756f;
   margin-bottom:20px;
 }
 
 .whatsapp{
   display:inline-block;
-  background:#22c55e;
-  color:white;
   text-decoration:none;
-  padding:15px 28px;
-  border-radius:13px;
-  font-weight:800;
+  background:#19a75b;
+  color:white;
+  padding:16px 28px;
+  border-radius:14px;
+  font-weight:bold;
+  font-size:17px;
 }
 
 footer{
-  background:#111827;
-  color:#cbd5e1;
+  background:#062e23;
+  color:#dceae3;
+  padding:30px 6%;
   text-align:center;
-  padding:25px;
 }
 
 footer strong{
-  color:white;
-  font-size:20px;
+  color:#f5c542;
 }
 
-@media(max-width:600px){
-  .hero h1{
-    font-size:38px;
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#12352b;
+  color:white;
+  padding:14px 20px;
+  border-radius:12px;
+  display:none;
+  z-index:999;
+  max-width:90%;
+  text-align:center;
+}
+
+@media(max-width:800px){
+  .services{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .services{
+  .nature-grid{
     grid-template-columns:1fr;
   }
 
-  .service{
-    padding:22px;
+  .nature-image{
+    height:240px;
+  }
+}
+
+@media(max-width:520px){
+  header{
+    padding:12px 4%;
+  }
+
+  .logo{
+    font-size:24px;
   }
 
   .header-btn{
-    padding:11px 14px;
-    font-size:14px;
+    padding:10px 13px;
+    font-size:13px;
+  }
+
+  .hero{
+    padding:42px 5% 35px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .service{
+    padding:18px 10px;
+  }
+
+  .service .icon{
+    font-size:38px;
+  }
+
+  .booking-box{
+    padding:20px 15px;
+  }
+
+  .service-select{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section{
+    padding:35px 5%;
+  }
+
+  .nature-text h2{
+    font-size:30px;
   }
 }
 </style>
@@ -234,135 +429,331 @@ footer strong{
 <body>
 
 <header>
-  <div class="logo">Bastar <span>Go</span></div>
-  <button class="header-btn" onclick="scrollToBooking()">Book Ride</button>
+  <div>
+    <div class="logo">Bastar <span>Go</span></div>
+    <div class="location">📍 Jagdalpur, Bastar</div>
+  </div>
+
+  <button class="header-btn" onclick="scrollBooking()">
+    Book Ride
+  </button>
 </header>
 
+
 <section class="hero">
-  <h1>Your Ride.<br><span>Our Responsibility.</span></h1>
-  <p>Fast, affordable local rides in<br>Jagdalpur & Bastar.</p>
-  <button class="main-btn" onclick="scrollToBooking()">Book Now</button>
+  <h1>
+    Chalo Bastar,<br>
+    <span>Bastar Go!</span>
+  </h1>
+
+  <p>
+    🏍️ Bike, 🛺 Auto, 🚕 Cab और 📦 Delivery —
+    Bastar की अपनी local mobility service.
+    Fast, safe और affordable.
+  </p>
+
+  <div class="hero-buttons">
+    <button class="primary" onclick="scrollBooking()">
+      🚀 Book Your Ride
+    </button>
+
+    <a class="secondary"
+       href="https://wa.me/919581981332?text=Namaste%20Bastar%20Go%2C%20mujhe%20ride%20book%20karni%20hai."
+       target="_blank">
+      💬 WhatsApp
+    </a>
+  </div>
 </section>
 
+
 <section class="section">
-  <h2>Go with Bastar Go</h2>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">
+    Aapko jahan jaana hai, Bastar Go ke saath jaiye.
+  </p>
 
   <div class="services">
 
-    <div class="service">
+    <div class="service" onclick="chooseService('Bike Ride')">
       <div class="icon">🏍️</div>
       <h3>Bike Ride</h3>
-      <p>Quick and affordable bike rides around the city.</p>
+      <p>Quick और affordable local bike rides.</p>
     </div>
 
-    <div class="service">
+    <div class="service" onclick="chooseService('Auto Ride')">
       <div class="icon">🛺</div>
       <h3>Auto Ride</h3>
-      <p>Easy local auto rides for your daily travel.</p>
+      <p>Comfortable local auto rides.</p>
     </div>
 
-    <div class="service">
+    <div class="service" onclick="chooseService('Cab Ride')">
+      <div class="icon">🚕</div>
+      <h3>Cab Ride</h3>
+      <p>Family और long-distance cab service.</p>
+    </div>
+
+    <div class="service" onclick="chooseService('Delivery')">
       <div class="icon">📦</div>
       <h3>Delivery</h3>
-      <p>Send packages quickly across Jagdalpur.</p>
+      <p>Documents, parcels और local delivery.</p>
     </div>
 
   </div>
 </section>
 
-<section class="section" id="booking">
 
-  <div class="booking">
+<section class="booking" id="booking">
 
-    <h2>Book a Ride</h2>
+  <div class="booking-box">
 
-    <label>Choose Service</label>
-    <select id="service">
-      <option value="Bike Ride">🏍️ Bike Ride</option>
-      <option value="Auto Ride">🛺 Auto Ride</option>
-      <option value="Delivery">📦 Delivery</option>
-    </select>
+    <h2>📍 Book Your Ride</h2>
 
-    <label>Pickup Location</label>
-    <input id="pickup" type="text" placeholder="Enter pickup location">
+    <div class="service-select">
 
-    <label>Drop Location</label>
-    <input id="drop" type="text" placeholder="Enter destination">
+      <button class="service-option active"
+              onclick="selectService(this,'Bike Ride')">
+        🏍️ Bike
+      </button>
 
-    <label>Your Name</label>
-    <input id="name" type="text" placeholder="Enter your name">
+      <button class="service-option"
+              onclick="selectService(this,'Auto Ride')">
+        🛺 Auto
+      </button>
 
-    <label>Mobile Number</label>
-    <input id="mobile" type="tel" placeholder="Enter mobile number">
+      <button class="service-option"
+              onclick="selectService(this,'Cab Ride')">
+        🚕 Cab
+      </button>
+
+      <button class="service-option"
+              onclick="selectService(this,'Delivery')">
+        📦 Delivery
+      </button>
+
+    </div>
+
+    <div class="field">
+      <label>Pickup Location</label>
+      <input id="pickup"
+             type="text"
+             placeholder="Jaise: Jagdalpur Railway Station">
+    </div>
+
+    <div class="field">
+      <label>Drop Location</label>
+      <input id="drop"
+             type="text"
+             placeholder="Jaise: Dharampura">
+    </div>
+
+    <div class="field">
+      <label>Phone Number</label>
+      <input id="phone"
+             type="tel"
+             placeholder="Apna mobile number">
+    </div>
+
+    <div class="fare">
+      <span>Estimated Fare</span>
+      <strong id="fare">₹48+</strong>
+    </div>
 
     <button class="book-btn" onclick="bookRide()">
-      Continue on WhatsApp
+      Continue on WhatsApp →
     </button>
 
   </div>
+</section>
+
+
+<section class="section nature">
+
+  <div class="nature-grid">
+
+    <div class="nature-image"></div>
+
+    <div class="nature-text">
+      <h2>🌿 Explore Beautiful Bastar</h2>
+
+      <p>
+        Bastar सिर्फ एक जगह नहीं, एक experience है।
+        Waterfalls, forests, tribal culture और beautiful
+        villages को explore करने के लिए Bastar Go आपके साथ है.
+      </p>
+
+      <div class="points">
+        <div class="point">🌳 Forest Routes</div>
+        <div class="point">💧 Waterfalls</div>
+        <div class="point">🛕 Local Places</div>
+        <div class="point">🧑‍🤝‍🧑 Local Drivers</div>
+      </div>
+    </div>
+
+  </div>
 
 </section>
+
 
 <section class="help">
+
   <h2>Need Help?</h2>
-  <p>Contact Bastar Go for booking assistance.</p>
+
+  <p>
+    Booking या service के लिए सीधे Bastar Go से contact करें.
+  </p>
 
   <a class="whatsapp"
-     href="https://wa.me/919581981332"
+     href="https://wa.me/919581981332?text=Namaste%20Bastar%20Go%2C%20mujhe%20booking%20ke%20liye%20help%20chahiye."
      target="_blank">
-     WhatsApp Us
+    💬 WhatsApp Us
   </a>
+
 </section>
 
+
 <footer>
-  <strong>Bastar Go</strong>
-  <p>Local Ride • Auto • Delivery</p>
-  <p>Jagdalpur, Bastar</p>
+  <div style="font-size:24px;font-weight:bold;margin-bottom:8px;">
+    Bastar <strong>Go</strong>
+  </div>
+
+  <p>
+    Bastar Mein, Har Safar Aasaan.
+  </p>
+
+  <p style="margin-top:12px;font-size:13px;">
+    🏍️ Bike &nbsp; • &nbsp;
+    🛺 Auto &nbsp; • &nbsp;
+    🚕 Cab &nbsp; • &nbsp;
+    📦 Delivery
+  </p>
+
+  <p style="margin-top:18px;font-size:13px;">
+    © 2026 Bastar Go • Jagdalpur, Bastar
+  </p>
 </footer>
+
+
+<div class="toast" id="toast"></div>
+
 
 <script>
 
-function scrollToBooking(){
-  document.getElementById("booking").scrollIntoView({
-    behavior:"smooth"
-  });
+let selectedService = "Bike Ride";
+
+function scrollBooking(){
+  document.getElementById("booking")
+  .scrollIntoView({behavior:"smooth"});
+}
+
+function selectService(button,service){
+
+  selectedService = service;
+
+  document.querySelectorAll(".service-option")
+  .forEach(btn => btn.classList.remove("active"));
+
+  button.classList.add("active");
+
+  updateFare();
+}
+
+function chooseService(service){
+
+  selectedService = service;
+
+  scrollBooking();
+
+  setTimeout(() => {
+
+    const buttons =
+      document.querySelectorAll(".service-option");
+
+    buttons.forEach(btn => {
+
+      btn.classList.remove("active");
+
+      if(btn.innerText.toLowerCase()
+        .includes(service.split(" ")[0].toLowerCase())){
+
+        btn.classList.add("active");
+      }
+
+    });
+
+    updateFare();
+
+  },400);
+}
+
+function updateFare(){
+
+  let fare = "₹48+";
+
+  if(selectedService === "Bike Ride"){
+    fare = "₹48+";
+  }
+
+  if(selectedService === "Auto Ride"){
+    fare = "₹70+";
+  }
+
+  if(selectedService === "Cab Ride"){
+    fare = "₹150+";
+  }
+
+  if(selectedService === "Delivery"){
+    fare = "₹50+";
+  }
+
+  document.getElementById("fare").innerText = fare;
 }
 
 function bookRide(){
 
-  let service = document.getElementById("service").value;
-  let pickup = document.getElementById("pickup").value.trim();
-  let drop = document.getElementById("drop").value.trim();
-  let name = document.getElementById("name").value.trim();
-  let mobile = document.getElementById("mobile").value.trim();
+  const pickup =
+    document.getElementById("pickup").value.trim();
 
-  if(pickup === "" || drop === ""){
-    alert("Please enter pickup and drop location.");
-    return;
-  }
+  const drop =
+    document.getElementById("drop").value.trim();
 
-  if(name === ""){
-    alert("Please enter your name.");
-    return;
-  }
+  const phone =
+    document.getElementById("phone").value.trim();
 
-  if(mobile === ""){
-    alert("Please enter your mobile number.");
+  if(!pickup || !drop){
+
+    showToast("Please pickup aur drop location enter karein.");
     return;
   }
 
   let message =
-    "🚕 *BASTAR GO BOOKING*%0A%0A" +
-    "🛵 Service: " + encodeURIComponent(service) + "%0A" +
-    "📍 Pickup: " + encodeURIComponent(pickup) + "%0A" +
-    "🏁 Drop: " + encodeURIComponent(drop) + "%0A" +
-    "👤 Name: " + encodeURIComponent(name) + "%0A" +
-    "📱 Mobile: " + encodeURIComponent(mobile);
+    "🚀 *BASTAR GO BOOKING*%0A%0A" +
+    "🛵 Service: " + selectedService + "%0A" +
+    "📍 Pickup: " + pickup + "%0A" +
+    "🏁 Drop: " + drop + "%0A";
+
+  if(phone){
+    message += "📱 Customer Phone: " + phone + "%0A";
+  }
+
+  message +=
+    "%0A🙏 Bastar Go se booking karni hai.";
 
   window.open(
     "https://wa.me/919581981332?text=" + message,
     "_blank"
   );
+}
+
+function showToast(text){
+
+  const toast = document.getElementById("toast");
+
+  toast.innerText = text;
+  toast.style.display = "block";
+
+  setTimeout(() => {
+    toast.style.display = "none";
+  },3000);
 }
 
 </script>
