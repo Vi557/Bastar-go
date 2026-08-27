@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bastar Go | Local Ride & Delivery</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fa;
+  color:#17202a;
+}
+header{
+  background:#111827;
+  color:white;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.nav{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:25px;
+  font-weight:bold;
+}
+.logo span{color:#22c55e}
+.hero{
+  background:linear-gradient(135deg,#111827,#1f2937);
+  color:white;
+  padding:55px 20px;
+  text-align:center;
+}
+.hero h1{
+  font-size:40px;
+  margin-bottom:12px;
+}
+.hero p{
+  font-size:18px;
+  color:#d1d5db;
+  margin-bottom:25px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+.green{background:#22c55e;color:white}
+.white{background:white;color:#111827}
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px 20px;
+}
+.title{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:28px;
+}
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  background:white;
+  padding:25px 18px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 4px 15px #00000012;
+}
+.icon{font-size:42px;margin-bottom:12px}
+.card h3{margin-bottom:8px}
+.card p{color:#667085}
+.booking{
+  background:white;
+  margin-top:30px;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 4px 15px #00000012;
+}
+input,select{
+  width:100%;
+  padding:14px;
+  margin:8px 0 14px;
+  border:1px solid #d0d5dd;
+  border-radius:9px;
+  font-size:16px;
+}
+.booking button{width:100%;font-size:17px}
+.contact{
+  text-align:center;
+  margin-top:30px;
+}
+footer{
+  background:#111827;
+  color:#cbd5e1;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:40px;
+}
+.small{font-size:14px;margin-top:8px}
+@media(max-width:700px){
+  .services{grid-template-columns:1fr}
+  .hero h1{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Bastar <span>Go</span></div>
+    <a class="btn green" href="#booking">Book Ride</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Welcome to Bastar Go</h1>
+  <p>Local Ride, Auto & Delivery Platform for Jagdalpur, Bastar</p>
+  <a href="#booking" class="btn green">Book Now</a>
+</section>
+
+<section class="container">
+  <h2 class="title">Our Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">🏍️</div>
+      <h3>Bike Ride</h3>
+      <p>Quick and affordable local bike rides.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛺</div>
+      <h3>Auto Ride</h3>
+      <p>Book an auto for your local journey.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Local Delivery</h3>
+      <p>Send documents, parcels and products locally.</p>
+    </div>
+
+  </div>
+
+  <div class="booking" id="booking">
+    <h2>Book Your Ride</h2>
+
+    <label>Service</label>
+    <select id="service">
+      <option>Bike Ride</option>
+      <option>Auto Ride</option>
+      <option>Local Delivery</option>
+    </select>
+
+    <label>Pickup Location</label>
+    <input id="pickup" type="text" placeholder="Enter pickup location">
+
+    <label>Drop Location</label>
+    <input id="drop" type="text" placeholder="Enter destination">
+
+    <button class="btn green" onclick="bookNow()">Continue on WhatsApp</button>
+  </div>
+
+  <div class="contact">
+    <h2>Need Help?</h2>
+    <p style="margin:10px 0 18px">Contact Bastar Go for booking assistance.</p>
+    <a class="btn green" href="https://wa.me/919999999999" target="_blank">
+      WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<footer>
+  <strong>Bastar Go</strong>
+  <div class="small">Local Ride • Auto • Delivery</div>
+  <div class="small">Jagdalpur, Bastar, Chhattisgarh</div>
+  <div class="small">© 2026 Bastar Go. All Rights Reserved.</div>
+</footer>
+
+<script>
+function bookNow(){
+  const service=document.getElementById("service").value;
+  const pickup=document.getElementById("pickup").value.trim();
+  const drop=document.getElementById("drop").value.trim();
+
+  if(!pickup || !drop){
+    alert("Please enter pickup and drop location.");
+    return;
+  }
+
+  const message =
+    "Hello Bastar Go,%0A%0A" +
+    "Service: " + encodeURIComponent(service) +
+    "%0APickup: " + encodeURIComponent(pickup) +
+    "%0ADrop: " + encodeURIComponent(drop);
+
+  window.open("https://wa.me/919999999999?text=" + message,"_blank");
+}
+</script>
+
+</body>
+</html>
