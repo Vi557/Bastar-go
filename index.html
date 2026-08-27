@@ -3,760 +3,1164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bastar Go | Local Ride & Delivery</title>
+
+<title>Bastar Go | Bike Auto Cab Delivery</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f4f7ef;
-  color:#12352b;
+font-family:Arial,Helvetica,sans-serif;
+background:#f3f7ef;
+color:#123d2d;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#063f2d;
-  color:white;
-  padding:14px 6%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 3px 15px #0002;
+position:sticky;
+top:0;
+z-index:100;
+background:#07543d;
+color:white;
+padding:15px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 3px 15px #0002;
 }
 
 .logo{
-  font-size:28px;
-  font-weight:800;
+font-size:29px;
+font-weight:900;
 }
 
 .logo span{
-  color:#f5c542;
+color:#f5c542;
 }
 
 .location{
-  font-size:13px;
-  color:#d8eadf;
-  margin-top:3px;
+font-size:13px;
+color:#d9eee4;
+margin-top:3px;
 }
 
 .header-btn{
-  background:#f5c542;
-  color:#163b2d;
-  border:0;
-  padding:13px 20px;
-  border-radius:12px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
+border:0;
+background:#f5c542;
+color:#123d2d;
+padding:13px 18px;
+border-radius:14px;
+font-weight:800;
+font-size:15px;
+cursor:pointer;
 }
 
 .hero{
-  padding:55px 6% 40px;
-  background:
-    linear-gradient(#073f2ddd,#073f2ddd),
-    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80");
-  background-size:cover;
-  background-position:center;
-  color:white;
+padding:48px 20px 38px;
+background:
+linear-gradient(135deg,#eaf5e5,#d7eee0);
 }
 
 .hero h1{
-  font-size:clamp(40px,8vw,72px);
-  line-height:1;
-  max-width:700px;
+font-size:48px;
+line-height:1.05;
+margin-bottom:18px;
 }
 
 .hero h1 span{
-  color:#f5c542;
+color:#078052;
 }
 
 .hero p{
-  font-size:19px;
-  line-height:1.6;
-  max-width:650px;
-  margin:20px 0 25px;
-  color:#e6f2eb;
+max-width:700px;
+font-size:18px;
+line-height:1.6;
+color:#52645c;
+margin-bottom:24px;
 }
 
 .hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .primary{
-  background:#f5c542;
-  color:#12352b;
-  border:0;
-  padding:16px 24px;
-  border-radius:14px;
-  font-size:17px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.secondary{
-  background:white;
-  color:#075338;
-  border:0;
-  padding:16px 24px;
-  border-radius:14px;
-  font-size:17px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.section{
-  padding:45px 6%;
-}
-
-.section-title{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-.section-sub{
-  text-align:center;
-  color:#63736c;
-  margin-bottom:30px;
-}
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-
-.service{
-  background:white;
-  border-radius:20px;
-  padding:25px 18px;
-  text-align:center;
-  border:1px solid #dce7df;
-  box-shadow:0 5px 20px #173c2b10;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.service:hover{
-  transform:translateY(-4px);
-}
-
-.service .icon{
-  font-size:48px;
-  margin-bottom:12px;
-}
-
-.service h3{
-  font-size:21px;
-  margin-bottom:7px;
-}
-
-.service p{
-  color:#6b7973;
-  font-size:14px;
-  line-height:1.5;
-}
-
-.booking{
-  background:#063f2d;
-  padding:45px 6%;
-}
-
-.booking-box{
-  max-width:700px;
-  margin:auto;
-  background:white;
-  border-radius:24px;
-  padding:28px;
-  box-shadow:0 15px 40px #0003;
-}
-
-.booking-box h2{
-  text-align:center;
-  margin-bottom:22px;
-  font-size:30px;
-}
-
-.service-select{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-  margin-bottom:20px;
-}
-
-.service-option{
-  border:2px solid #dce5df;
-  border-radius:12px;
-  padding:11px 5px;
-  background:#fff;
-  cursor:pointer;
-  text-align:center;
-  font-weight:bold;
-  color:#21443a;
-}
-
-.service-option.active{
-  border-color:#087447;
-  background:#e8f5ed;
-  color:#075338;
-}
-
-.field{
-  margin-bottom:15px;
-}
-
-.field label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:7px;
-}
-
-.field input,
-.field select{
-  width:100%;
-  padding:15px;
-  border:1px solid #ccd8d1;
-  border-radius:12px;
-  font-size:16px;
-  outline:none;
-}
-
-.field input:focus{
-  border-color:#087447;
-}
-
-.fare{
-  background:#f2f7f2;
-  border-radius:14px;
-  padding:15px;
-  margin:10px 0 18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.fare strong{
-  font-size:24px;
-  color:#087447;
-}
-
-.book-btn{
-  width:100%;
-  background:#087447;
-  color:white;
-  border:0;
-  padding:17px;
-  border-radius:13px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.nature{
-  background:#e7f0df;
-}
-
-.nature-grid{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:30px;
-  align-items:center;
-}
-
-.nature-image{
-  height:320px;
-  border-radius:25px;
-  background:
-    linear-gradient(#0003,#0003),
-    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80");
-  background-size:cover;
-  background-position:center;
-}
-
-.nature-text h2{
-  font-size:38px;
-  margin-bottom:15px;
-}
-
-.nature-text p{
-  color:#50645b;
-  line-height:1.7;
-  font-size:17px;
-}
-
-.points{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:20px;
-}
-
-.point{
-  background:white;
-  padding:15px;
-  border-radius:13px;
-  font-weight:bold;
-}
-
-.help{
-  text-align:center;
-  padding:45px 6%;
-}
-
-.help h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.help p{
-  color:#66756f;
-  margin-bottom:20px;
+background:#08764f;
+color:white;
+border:0;
+padding:16px 22px;
+border-radius:15px;
+font-weight:800;
+font-size:16px;
+cursor:pointer;
 }
 
 .whatsapp{
-  display:inline-block;
-  text-decoration:none;
-  background:#19a75b;
-  color:white;
-  padding:16px 28px;
-  border-radius:14px;
-  font-weight:bold;
-  font-size:17px;
+background:#19a95b;
+color:white;
+border:0;
+padding:16px 22px;
+border-radius:15px;
+font-weight:800;
+font-size:16px;
+cursor:pointer;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+padding:25px 17px 50px;
+}
+
+.card{
+background:white;
+border-radius:25px;
+padding:23px;
+box-shadow:0 10px 30px #123d2d18;
+}
+
+.card h2{
+font-size:29px;
+margin-bottom:20px;
+}
+
+.services{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:11px;
+}
+
+.service{
+background:white;
+border:2px solid #dce6df;
+border-radius:17px;
+padding:17px 10px;
+text-align:center;
+font-size:19px;
+font-weight:800;
+color:#24493c;
+cursor:pointer;
+}
+
+.service.active{
+background:#e7f7ed;
+border-color:#087d55;
+color:#075f42;
+}
+
+.service small{
+display:block;
+font-size:11px;
+color:#718079;
+margin-top:5px;
+}
+
+label{
+display:block;
+font-weight:800;
+font-size:16px;
+margin:20px 0 7px;
+}
+
+input{
+width:100%;
+padding:16px;
+border:2px solid #d6dfda;
+border-radius:14px;
+font-size:16px;
+outline:none;
+}
+
+input:focus{
+border-color:#087d55;
+}
+
+.fare{
+margin-top:20px;
+padding:18px;
+border-radius:17px;
+background:#eff8f1;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.fare-title{
+font-size:16px;
+font-weight:700;
+}
+
+.distance{
+font-size:13px;
+color:#68766f;
+margin-top:4px;
+}
+
+.fare-value{
+font-size:31px;
+font-weight:900;
+color:#087d55;
+}
+
+.book{
+width:100%;
+border:0;
+background:#087d55;
+color:white;
+padding:17px;
+border-radius:15px;
+font-size:17px;
+font-weight:800;
+margin-top:17px;
+cursor:pointer;
+}
+
+.note{
+font-size:12px;
+color:#68766f;
+line-height:1.5;
+margin-top:10px;
+}
+
+.explore{
+margin-top:22px;
+padding:28px;
+border-radius:24px;
+background:linear-gradient(135deg,#185d46,#073d2e);
+color:white;
+}
+
+.explore h2{
+font-size:28px;
+margin-bottom:7px;
+}
+
+.explore p{
+color:#d9ece3;
+line-height:1.5;
+}
+
+.places{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px;
+margin-top:17px;
+}
+
+.place{
+padding:13px 8px;
+border-radius:13px;
+background:#ffffff15;
+border:1px solid #ffffff30;
+font-weight:700;
+font-size:14px;
+text-align:center;
+}
+
+.features{
+margin-top:22px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:11px;
+}
+
+.feature{
+background:white;
+border-radius:17px;
+padding:18px;
+border:1px solid #dce5df;
+}
+
+.feature-icon{
+font-size:28px;
+margin-bottom:7px;
+}
+
+.feature h3{
+font-size:17px;
+margin-bottom:5px;
+}
+
+.feature p{
+font-size:13px;
+color:#68766f;
+line-height:1.5;
 }
 
 footer{
-  background:#062e23;
-  color:#dceae3;
-  padding:30px 6%;
-  text-align:center;
+background:#073b2d;
+color:white;
+text-align:center;
+padding:30px 20px;
 }
 
-footer strong{
-  color:#f5c542;
+footer .footer-logo{
+font-size:25px;
+font-weight:900;
 }
 
-.toast{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#12352b;
-  color:white;
-  padding:14px 20px;
-  border-radius:12px;
-  display:none;
-  z-index:999;
-  max-width:90%;
-  text-align:center;
+footer .footer-logo span{
+color:#f5c542;
 }
 
-@media(max-width:800px){
-  .services{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .nature-grid{
-    grid-template-columns:1fr;
-  }
-
-  .nature-image{
-    height:240px;
-  }
+footer p{
+color:#cce2d8;
+font-size:13px;
+margin-top:8px;
 }
 
-@media(max-width:520px){
-  header{
-    padding:12px 4%;
-  }
+@media(max-width:600px){
 
-  .logo{
-    font-size:24px;
-  }
-
-  .header-btn{
-    padding:10px 13px;
-    font-size:13px;
-  }
-
-  .hero{
-    padding:42px 5% 35px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .services{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .service{
-    padding:18px 10px;
-  }
-
-  .service .icon{
-    font-size:38px;
-  }
-
-  .booking-box{
-    padding:20px 15px;
-  }
-
-  .service-select{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .section{
-    padding:35px 5%;
-  }
-
-  .nature-text h2{
-    font-size:30px;
-  }
+header{
+padding:13px 15px;
 }
+
+.logo{
+font-size:25px;
+}
+
+.header-btn{
+padding:11px 14px;
+font-size:13px;
+}
+
+.hero{
+padding:40px 18px 32px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.container{
+padding:20px 13px 40px;
+}
+
+.card{
+padding:18px;
+}
+
+.card h2{
+font-size:25px;
+}
+
+.services{
+grid-template-columns:1fr 1fr;
+}
+
+.service{
+font-size:17px;
+padding:15px 7px;
+}
+
+.places{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<header>
-  <div>
-    <div class="logo">Bastar <span>Go</span></div>
-    <div class="location">📍 Jagdalpur, Bastar</div>
-  </div>
 
-  <button class="header-btn" onclick="scrollBooking()">
-    Book Ride
-  </button>
+<header>
+
+<div>
+
+<div class="logo">
+Bastar <span>Go</span> 🌿
+</div>
+
+<div class="location">
+📍 Jagdalpur, Bastar
+</div>
+
+</div>
+
+<button
+class="header-btn"
+onclick="scrollToBooking()"
+>
+Book Ride
+</button>
+
 </header>
 
 
+
 <section class="hero">
-  <h1>
-    Chalo Bastar,<br>
-    <span>Bastar Go!</span>
-  </h1>
 
-  <p>
-    🏍️ Bike, 🛺 Auto, 🚕 Cab और 📦 Delivery —
-    Bastar की अपनी local mobility service.
-    Fast, safe और affordable.
-  </p>
+<h1>
+Chalo Bastar,<br>
+<span>Chalo Bastar Go!</span>
+</h1>
 
-  <div class="hero-buttons">
-    <button class="primary" onclick="scrollBooking()">
-      🚀 Book Your Ride
-    </button>
+<p>
+🏍️ Bike • 🛺 Auto • 🚕 Cab • 📦 Delivery
+<br>
+Bastar ki apni local mobility service.
+Fast, safe aur affordable.
+</p>
 
-    <a class="secondary"
-       href="https://wa.me/919581981332?text=Namaste%20Bastar%20Go%2C%20mujhe%20ride%20book%20karni%20hai."
-       target="_blank">
-      💬 WhatsApp
-    </a>
-  </div>
-</section>
+<div class="hero-buttons">
 
+<button
+class="primary"
+onclick="scrollToBooking()"
+>
+🚀 Book Your Ride
+</button>
 
-<section class="section">
-  <h2 class="section-title">Our Services</h2>
-  <p class="section-sub">
-    Aapko jahan jaana hai, Bastar Go ke saath jaiye.
-  </p>
+<button
+class="whatsapp"
+onclick="whatsappHelp()"
+>
+💬 WhatsApp
+</button>
 
-  <div class="services">
-
-    <div class="service" onclick="chooseService('Bike Ride')">
-      <div class="icon">🏍️</div>
-      <h3>Bike Ride</h3>
-      <p>Quick और affordable local bike rides.</p>
-    </div>
-
-    <div class="service" onclick="chooseService('Auto Ride')">
-      <div class="icon">🛺</div>
-      <h3>Auto Ride</h3>
-      <p>Comfortable local auto rides.</p>
-    </div>
-
-    <div class="service" onclick="chooseService('Cab Ride')">
-      <div class="icon">🚕</div>
-      <h3>Cab Ride</h3>
-      <p>Family और long-distance cab service.</p>
-    </div>
-
-    <div class="service" onclick="chooseService('Delivery')">
-      <div class="icon">📦</div>
-      <h3>Delivery</h3>
-      <p>Documents, parcels और local delivery.</p>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="booking" id="booking">
-
-  <div class="booking-box">
-
-    <h2>📍 Book Your Ride</h2>
-
-    <div class="service-select">
-
-      <button class="service-option active"
-              onclick="selectService(this,'Bike Ride')">
-        🏍️ Bike
-      </button>
-
-      <button class="service-option"
-              onclick="selectService(this,'Auto Ride')">
-        🛺 Auto
-      </button>
-
-      <button class="service-option"
-              onclick="selectService(this,'Cab Ride')">
-        🚕 Cab
-      </button>
-
-      <button class="service-option"
-              onclick="selectService(this,'Delivery')">
-        📦 Delivery
-      </button>
-
-    </div>
-
-    <div class="field">
-      <label>Pickup Location</label>
-      <input id="pickup"
-             type="text"
-             placeholder="Jaise: Jagdalpur Railway Station">
-    </div>
-
-    <div class="field">
-      <label>Drop Location</label>
-      <input id="drop"
-             type="text"
-             placeholder="Jaise: Dharampura">
-    </div>
-
-    <div class="field">
-      <label>Phone Number</label>
-      <input id="phone"
-             type="tel"
-             placeholder="Apna mobile number">
-    </div>
-
-    <div class="fare">
-      <span>Estimated Fare</span>
-      <strong id="fare">₹48+</strong>
-    </div>
-
-    <button class="book-btn" onclick="bookRide()">
-      Continue on WhatsApp →
-    </button>
-
-  </div>
-</section>
-
-
-<section class="section nature">
-
-  <div class="nature-grid">
-
-    <div class="nature-image"></div>
-
-    <div class="nature-text">
-      <h2>🌿 Explore Beautiful Bastar</h2>
-
-      <p>
-        Bastar सिर्फ एक जगह नहीं, एक experience है।
-        Waterfalls, forests, tribal culture और beautiful
-        villages को explore करने के लिए Bastar Go आपके साथ है.
-      </p>
-
-      <div class="points">
-        <div class="point">🌳 Forest Routes</div>
-        <div class="point">💧 Waterfalls</div>
-        <div class="point">🛕 Local Places</div>
-        <div class="point">🧑‍🤝‍🧑 Local Drivers</div>
-      </div>
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<section class="help">
 
-  <h2>Need Help?</h2>
+<main
+class="container"
+id="booking"
+>
 
-  <p>
-    Booking या service के लिए सीधे Bastar Go से contact करें.
-  </p>
 
-  <a class="whatsapp"
-     href="https://wa.me/919581981332?text=Namaste%20Bastar%20Go%2C%20mujhe%20booking%20ke%20liye%20help%20chahiye."
-     target="_blank">
-    💬 WhatsApp Us
-  </a>
+<div class="card">
+
+<h2>
+📍 Book Your Ride
+</h2>
+
+
+<div class="services">
+
+
+<button
+class="service active"
+data-service="Bike"
+>
+🏍️ Bike
+
+<small>
+₹10 + ₹10/km
+</small>
+
+</button>
+
+
+<button
+class="service"
+data-service="Auto"
+>
+🛺 Auto
+
+<small>
+₹20 + ₹14/km
+</small>
+
+</button>
+
+
+<button
+class="service"
+data-service="Cab"
+>
+🚕 Cab
+
+<small>
+₹40 + ₹18/km
+</small>
+
+</button>
+
+
+<button
+class="service"
+data-service="Delivery"
+>
+📦 Delivery
+
+<small>
+₹25 + ₹12/km
+</small>
+
+</button>
+
+
+</div>
+
+
+
+<label>
+Pickup Location
+</label>
+
+<input
+id="pickup"
+type="text"
+placeholder="Jaise: Sanjay Market"
+/>
+
+
+
+<label>
+Drop Location
+</label>
+
+<input
+id="drop"
+type="text"
+placeholder="Jaise: Chitrakote"
+/>
+
+
+
+<label>
+Phone Number
+</label>
+
+<input
+id="phone"
+type="tel"
+maxlength="10"
+inputmode="numeric"
+placeholder="10 digit mobile number"
+/>
+
+
+
+<div class="fare">
+
+<div>
+
+<div class="fare-title">
+Estimated Fare
+</div>
+
+<div
+class="distance"
+id="distanceText"
+>
+Pickup aur drop enter karein
+</div>
+
+</div>
+
+
+<div
+class="fare-value"
+id="fareAmount"
+>
+₹0
+</div>
+
+</div>
+
+
+
+<button
+class="book"
+onclick="bookRide()"
+>
+💬 Continue on WhatsApp
+</button>
+
+
+<div class="note">
+
+Fare route distance ke hisaab se estimated hai.
+Final fare booking confirm karte waqt verify hoga.
+
+</div>
+
+</div>
+
+
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-icon">
+🛡️
+</div>
+
+<h3>
+Safe & Secure
+</h3>
+
+<p>
+Verified riders aur secure booking process.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+⚡
+</div>
+
+<h3>
+Quick Pickup
+</h3>
+
+<p>
+Nearby rider ko booking request.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+₹
+</div>
+
+<h3>
+Affordable
+</h3>
+
+<p>
+Bastar ke local customers ke liye.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🎧
+</div>
+
+<h3>
+Local Support
+</h3>
+
+<p>
+Jagdalpur mein direct support.
+</p>
+
+</div>
+
+</div>
+
+
+
+<section class="explore">
+
+<h2>
+🌿 Explore Bastar
+</h2>
+
+<p>
+Beautiful Bastar ko explore karne ke liye
+Bastar Go ke saath aasaan travel.
+</p>
+
+
+<div class="places">
+
+<div class="place">
+💧 Chitrakote
+</div>
+
+<div class="place">
+🌊 Tirathgarh
+</div>
+
+<div class="place">
+🌳 Kanger Valley
+</div>
+
+<div class="place">
+🛕 Danteshwari
+</div>
+
+<div class="place">
+🏛️ Barsoor
+</div>
+
+<div class="place">
+📍 Jagdalpur
+</div>
+
+</div>
 
 </section>
+
+</main>
+
 
 
 <footer>
-  <div style="font-size:24px;font-weight:bold;margin-bottom:8px;">
-    Bastar <strong>Go</strong>
-  </div>
 
-  <p>
-    Bastar Mein, Har Safar Aasaan.
-  </p>
+<div class="footer-logo">
+Bastar <span>Go</span> 🌿
+</div>
 
-  <p style="margin-top:12px;font-size:13px;">
-    🏍️ Bike &nbsp; • &nbsp;
-    🛺 Auto &nbsp; • &nbsp;
-    🚕 Cab &nbsp; • &nbsp;
-    📦 Delivery
-  </p>
+<p>
+Bastar Mein, Har Safar Aasaan.
+</p>
 
-  <p style="margin-top:18px;font-size:13px;">
-    © 2026 Bastar Go • Jagdalpur, Bastar
-  </p>
+<p>
+🏍️ Bike • 🛺 Auto • 🚕 Cab • 📦 Delivery
+</p>
+
+<p>
+© 2026 Bastar Go • Jagdalpur, Bastar
+</p>
+
 </footer>
 
-
-<div class="toast" id="toast"></div>
 
 
 <script>
 
-let selectedService = "Bike Ride";
 
-function scrollBooking(){
-  document.getElementById("booking")
-  .scrollIntoView({behavior:"smooth"});
+/* ==================================
+   BASTAR GO WHATSAPP NUMBER
+   ================================== */
+
+const WHATSAPP_NUMBER =
+"919581981332";
+
+
+
+/* ==================================
+   FARE RATES
+   ================================== */
+
+const rates = {
+
+Bike:{
+base:10,
+perKm:10
+},
+
+Auto:{
+base:20,
+perKm:14
+},
+
+Cab:{
+base:40,
+perKm:18
+},
+
+Delivery:{
+base:25,
+perKm:12
 }
 
-function selectService(button,service){
+};
 
-  selectedService = service;
 
-  document.querySelectorAll(".service-option")
-  .forEach(btn => btn.classList.remove("active"));
 
-  button.classList.add("active");
+let selectedService =
+"Bike";
 
-  updateFare();
+
+
+/* ==================================
+   BASTAR ROUTES
+   ================================== */
+
+const routes = {
+
+"jagdalpur|chitrakote":38,
+
+"jagdalpur|chitrakoot":38,
+
+"sanjay market|chitrakote":38,
+
+"sanjay market|chitrakoot":38,
+
+"jagdalpur|tirathgarh":32,
+
+"jagdalpur|tirathgarh waterfall":32,
+
+"jagdalpur|danteshwari temple":2,
+
+"jagdalpur|danteshwari mandir":2,
+
+"jagdalpur|geedam":80,
+
+"jagdalpur|dantewada":85,
+
+"jagdalpur|barsoor":75,
+
+"jagdalpur|kondagaon":65,
+
+"sanjay market|danteshwari temple":2
+
+};
+
+
+
+/* ==================================
+   CLEAN LOCATION
+   ================================== */
+
+function clean(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/\s+/g," ");
+
 }
 
-function chooseService(service){
 
-  selectedService = service;
 
-  scrollBooking();
+/* ==================================
+   DISTANCE
+   ================================== */
 
-  setTimeout(() => {
+function getDistance(){
 
-    const buttons =
-      document.querySelectorAll(".service-option");
+const pickup =
+clean(
+document
+.getElementById("pickup")
+.value
+);
 
-    buttons.forEach(btn => {
+const drop =
+clean(
+document
+.getElementById("drop")
+.value
+);
 
-      btn.classList.remove("active");
 
-      if(btn.innerText.toLowerCase()
-        .includes(service.split(" ")[0].toLowerCase())){
+if(!pickup || !drop){
 
-        btn.classList.add("active");
-      }
+return 0;
 
-    });
-
-    updateFare();
-
-  },400);
 }
+
+
+const key =
+pickup + "|" + drop;
+
+
+const reverse =
+drop + "|" + pickup;
+
+
+if(routes[key]){
+
+return routes[key];
+
+}
+
+
+if(routes[reverse]){
+
+return routes[reverse];
+
+}
+
+
+/*
+Unknown route ke liye
+temporary 5 km estimate.
+*/
+
+return 5;
+
+}
+
+
+
+/* ==================================
+   UPDATE FARE
+   ================================== */
 
 function updateFare(){
 
-  let fare = "₹48+";
+const distance =
+getDistance();
 
-  if(selectedService === "Bike Ride"){
-    fare = "₹48+";
-  }
 
-  if(selectedService === "Auto Ride"){
-    fare = "₹70+";
-  }
+const fare =
+document
+.getElementById("fareAmount");
 
-  if(selectedService === "Cab Ride"){
-    fare = "₹150+";
-  }
 
-  if(selectedService === "Delivery"){
-    fare = "₹50+";
-  }
+const distanceText =
+document
+.getElementById("distanceText");
 
-  document.getElementById("fare").innerText = fare;
+
+if(!distance){
+
+fare.innerText =
+"₹0";
+
+distanceText.innerText =
+"Pickup aur drop enter karein";
+
+return;
+
 }
+
+
+const rate =
+rates[selectedService];
+
+
+const amount =
+Math.round(
+rate.base +
+(distance * rate.perKm)
+);
+
+
+fare.innerText =
+"₹" + amount;
+
+
+distanceText.innerText =
+distance +
+" km • " +
+selectedService;
+
+}
+
+
+
+/* ==================================
+   SERVICE BUTTONS
+   ================================== */
+
+document
+.querySelectorAll(".service")
+.forEach(
+button => {
+
+button.addEventListener(
+"click",
+function(){
+
+document
+.querySelectorAll(".service")
+.forEach(
+item =>
+item.classList.remove(
+"active"
+)
+);
+
+this.classList.add("active");
+
+
+selectedService =
+this.dataset.service;
+
+
+updateFare();
+
+}
+);
+
+}
+);
+
+
+
+/* ==================================
+   LOCATION INPUT
+   ================================== */
+
+document
+.getElementById("pickup")
+.addEventListener(
+"input",
+updateFare
+);
+
+
+document
+.getElementById("drop")
+.addEventListener(
+"input",
+updateFare
+);
+
+
+
+/* ==================================
+   SCROLL
+   ================================== */
+
+function scrollToBooking(){
+
+document
+.getElementById("booking")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+
+/* ==================================
+   WHATSAPP BOOKING
+   ================================== */
 
 function bookRide(){
 
-  const pickup =
-    document.getElementById("pickup").value.trim();
+const pickup =
+document
+.getElementById("pickup")
+.value
+.trim();
 
-  const drop =
-    document.getElementById("drop").value.trim();
 
-  const phone =
-    document.getElementById("phone").value.trim();
+const drop =
+document
+.getElementById("drop")
+.value
+.trim();
 
-  if(!pickup || !drop){
 
-    showToast("Please pickup aur drop location enter karein.");
-    return;
-  }
+const phone =
+document
+.getElementById("phone")
+.value
+.trim();
 
-  let message =
-    "🚀 *BASTAR GO BOOKING*%0A%0A" +
-    "🛵 Service: " + selectedService + "%0A" +
-    "📍 Pickup: " + pickup + "%0A" +
-    "🏁 Drop: " + drop + "%0A";
 
-  if(phone){
-    message += "📱 Customer Phone: " + phone + "%0A";
-  }
+const distance =
+getDistance();
 
-  message +=
-    "%0A🙏 Bastar Go se booking karni hai.";
 
-  window.open(
-    "https://wa.me/919581981332?text=" + message,
-    "_blank"
-  );
+const fare =
+document
+.getElementById("fareAmount")
+.innerText;
+
+
+
+if(!pickup || !drop){
+
+alert(
+"Please pickup aur drop location enter karein."
+);
+
+return;
+
 }
 
-function showToast(text){
 
-  const toast = document.getElementById("toast");
 
-  toast.innerText = text;
-  toast.style.display = "block";
+if(!/^[0-9]{10}$/.test(phone)){
 
-  setTimeout(() => {
-    toast.style.display = "none";
-  },3000);
+alert(
+"Please valid 10 digit mobile number enter karein."
+);
+
+return;
+
 }
+
+
+
+const message =
+
+"Bastar Go Booking\n\n" +
+
+"Service: " +
+selectedService +
+
+"\n\nPickup: " +
+pickup +
+
+"\n\nDrop: " +
+drop +
+
+"\n\nDistance: " +
+distance +
+" km" +
+
+"\n\nEstimated Fare: " +
+fare +
+
+"\n\nCustomer Phone: " +
+phone;
+
+
+
+window.open(
+
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodeURIComponent(message),
+
+"_blank"
+
+);
+
+}
+
+
+
+/* ==================================
+   WHATSAPP HELP
+   ================================== */
+
+function whatsappHelp(){
+
+const message =
+"Hello Bastar Go, mujhe ride booking ke liye help chahiye.";
+
+window.open(
+
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodeURIComponent(message),
+
+"_blank"
+
+);
+
+}
+
+
+
+/* ==================================
+   INITIAL
+   ================================== */
+
+updateFare();
 
 </script>
+
 
 </body>
 </html>
