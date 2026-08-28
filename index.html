@@ -2,1089 +2,1291 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bastar Go | Bike Auto Cab Delivery</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bastar Go | Complete Mobility System</title>
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f3f7ef;
-color:#123d2d;
-}
-
-header{
-position:sticky;
-top:0;
-z-index:100;
-background:#07543d;
-color:white;
-padding:15px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-box-shadow:0 3px 15px #0002;
-}
-
-.logo{
-font-size:29px;
-font-weight:900;
-}
-
-.logo span{
-color:#f5c542;
-}
-
-.location{
-font-size:13px;
-color:#d9eee4;
-margin-top:3px;
-}
-
-.header-btn{
-border:0;
-background:#f5c542;
-color:#123d2d;
-padding:13px 18px;
-border-radius:14px;
-font-weight:800;
-font-size:15px;
-cursor:pointer;
-}
-
-.hero{
-padding:48px 20px 38px;
-background:linear-gradient(135deg,#eaf5e5,#d7eee0);
-}
-
-.hero h1{
-font-size:48px;
-line-height:1.05;
-margin-bottom:18px;
-}
-
-.hero h1 span{
-color:#078052;
-}
-
-.hero p{
-max-width:700px;
-font-size:18px;
-line-height:1.6;
-color:#52645c;
-margin-bottom:24px;
-}
-
-.hero-buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.primary,
-.whatsapp{
-border:0;
-padding:16px 22px;
-border-radius:15px;
-font-weight:800;
-font-size:16px;
-cursor:pointer;
-}
-
-.primary{
-background:#08764f;
-color:white;
-}
-
-.whatsapp{
-background:#19a95b;
-color:white;
-}
-
-.container{
-max-width:850px;
-margin:auto;
-padding:25px 17px 50px;
-}
-
-.card{
-background:white;
-border-radius:25px;
-padding:23px;
-box-shadow:0 10px 30px #123d2d18;
-}
-
-.card h2{
-font-size:29px;
-margin-bottom:20px;
-}
-
-.services{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:11px;
-}
-
-.service{
-background:white;
-border:2px solid #dce6df;
-border-radius:17px;
-padding:17px 10px;
-text-align:center;
-font-size:19px;
-font-weight:800;
-color:#24493c;
-cursor:pointer;
-}
-
-.service.active{
-background:#e7f7ed;
-border-color:#087d55;
-color:#075f42;
-}
-
-.service small{
-display:block;
-font-size:11px;
-color:#718079;
-margin-top:5px;
-}
-
-label{
-display:block;
-font-weight:800;
-font-size:16px;
-margin:20px 0 7px;
-}
-
-input{
-width:100%;
-padding:16px;
-border:2px solid #d6dfda;
-border-radius:14px;
-font-size:16px;
-outline:none;
-}
-
-input:focus{
-border-color:#087d55;
-}
-
-.fare{
-margin-top:20px;
-padding:18px;
-border-radius:17px;
-background:#eff8f1;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.fare-title{
-font-size:16px;
-font-weight:700;
-}
-
-.distance{
-font-size:13px;
-color:#68766f;
-margin-top:4px;
-}
-
-.fare-value{
-font-size:31px;
-font-weight:900;
-color:#087d55;
-}
-
-.book{
-width:100%;
-border:0;
-background:#087d55;
-color:white;
-padding:17px;
-border-radius:15px;
-font-size:17px;
-font-weight:800;
-margin-top:17px;
-cursor:pointer;
-}
-
-.book:disabled{
-opacity:.6;
-cursor:not-allowed;
-}
-
-.note{
-font-size:12px;
-color:#68766f;
-line-height:1.5;
-margin-top:10px;
-}
-
-.explore{
-margin-top:22px;
-padding:28px;
-border-radius:24px;
-background:linear-gradient(135deg,#185d46,#073d2e);
-color:white;
-}
-
-.explore h2{
-font-size:28px;
-margin-bottom:7px;
-}
-
-.explore p{
-color:#d9ece3;
-line-height:1.5;
-}
-
-.places{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
-margin-top:17px;
-}
-
-.place{
-padding:13px 8px;
-border-radius:13px;
-background:#ffffff15;
-border:1px solid #ffffff30;
-font-weight:700;
-font-size:14px;
-text-align:center;
-}
-
-.features{
-margin-top:22px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:11px;
-}
-
-.feature{
-background:white;
-border-radius:17px;
-padding:18px;
-border:1px solid #dce5df;
-}
-
-.feature-icon{
-font-size:28px;
-margin-bottom:7px;
-}
-
-.feature h3{
-font-size:17px;
-margin-bottom:5px;
-}
-
-.feature p{
-font-size:13px;
-color:#68766f;
-line-height:1.5;
-}
-
-footer{
-background:#073b2d;
-color:white;
-text-align:center;
-padding:30px 20px;
-}
-
-footer .footer-logo{
-font-size:25px;
-font-weight:900;
-}
-
-footer .footer-logo span{
-color:#f5c542;
-}
-
-footer p{
-color:#cce2d8;
-font-size:13px;
-margin-top:8px;
-}
-
-@media(max-width:600px){
-
-header{
-padding:13px 15px;
-}
-
-.logo{
-font-size:25px;
-}
-
-.header-btn{
-padding:11px 14px;
-font-size:13px;
-}
-
-.hero{
-padding:40px 18px 32px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.container{
-padding:20px 13px 40px;
-}
-
-.card{
-padding:18px;
-}
-
-.card h2{
-font-size:25px;
-}
-
-.services{
-grid-template-columns:1fr 1fr;
-}
-
-.service{
-font-size:17px;
-padding:15px 7px;
-}
-
-.places{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#07543d;--green2:#087d55;--light:#f3f7ef;--gold:#f5c542;--text:#123d2d;--muted:#68766f;--red:#d63b3b}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text)}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:var(--green);color:#fff;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 15px #0002}
+.logo{font-size:25px;font-weight:900}.logo span{color:var(--gold)}
+.location{font-size:12px;color:#d9eee4;margin-top:2px}
+.top-actions{display:flex;gap:7px}.top-actions button{border:0;border-radius:12px;padding:10px 12px;font-weight:800}
+.gold{background:var(--gold);color:var(--text)}.dark{background:#ffffff18;color:#fff;border:1px solid #ffffff30!important}
+main{max-width:1000px;margin:auto;padding:18px 14px 50px}
+.hero{background:linear-gradient(135deg,#eaf5e5,#d7eee0);border-radius:24px;padding:27px 20px;margin-bottom:16px}
+.hero h1{font-size:40px;line-height:1.05;margin-bottom:10px}.hero h1 span{color:var(--green2)}
+.hero p{color:#52645c;line-height:1.5}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0}
+.tab{border:2px solid #dce6df;background:#fff;border-radius:13px;padding:12px 6px;font-weight:900;color:var(--text)}
+.tab.active{background:#e7f7ed;border-color:var(--green2)}
+.panel{display:none}.panel.active{display:block}
+.card{background:#fff;border-radius:22px;padding:19px;box-shadow:0 8px 25px #123d2d15;margin-bottom:14px}
+.card h2{font-size:23px;margin-bottom:15px}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.service{border:2px solid #dce6df;background:#fff;border-radius:15px;padding:14px 8px;text-align:center;font-weight:900;color:#24493c}
+.service.active{background:#e7f7ed;border-color:var(--green2);color:#075f42}
+.service small{display:block;font-size:11px;color:#718079;margin-top:4px}
+label{display:block;font-weight:800;margin:16px 0 6px;font-size:14px}
+input,select{width:100%;padding:14px;border:2px solid #d6dfda;border-radius:13px;outline:none;background:#fff}
+input:focus,select:focus{border-color:var(--green2)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.btn{border:0;border-radius:13px;padding:14px 16px;font-weight:900;width:100%;margin-top:10px}
+.btn-green{background:var(--green2);color:#fff}.btn-gold{background:var(--gold);color:var(--text)}
+.btn-red{background:#fee;color:var(--red);border:1px solid #f4bcbc}
+.btn-gray{background:#eef2ef;color:var(--text)}
+.fare{margin-top:15px;padding:16px;border-radius:15px;background:#eff8f1;display:flex;justify-content:space-between;align-items:center}
+.fare-value{font-size:29px;font-weight:900;color:var(--green2)}
+.small{font-size:12px;color:var(--muted);line-height:1.45}
+.status{padding:13px;border-radius:13px;background:#f3f6f4;margin-top:10px;font-weight:800}
+.status.pending{background:#fff7dc}.status.accepted{background:#e7f7ed}.status.completed{background:#e7f0ff}.status.cancelled{background:#fee}
+.booking{border:1px solid #dce5df;border-radius:15px;padding:14px;margin-top:10px}
+.booking strong{display:block;margin-bottom:5px}.booking .meta{font-size:13px;color:var(--muted);line-height:1.55}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#e7f7ed;font-size:11px;font-weight:900;margin-top:6px}
+.badge.red{background:#fee}.badge.gold{background:#fff3c9}
+.hidden{display:none!important}
+.notice{padding:12px;border-radius:12px;background:#fff7dc;color:#705800;margin-bottom:10px;font-size:13px;line-height:1.4}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{background:#f6f8f6;border:1px solid #e0e7e2;border-radius:15px;padding:14px}.kpi b{font-size:25px;display:block;color:var(--green2)}
+.list{max-height:560px;overflow:auto}
+.userbar{font-size:12px;color:var(--muted);margin-bottom:10px;word-break:break-all}
+.mapbox{background:#eef5f0;border:1px dashed #aabdb2;border-radius:14px;padding:13px;margin-top:10px}
+footer{background:#073b2d;color:#fff;text-align:center;padding:25px 15px}
+footer span{color:var(--gold)}
+@media(max-width:600px){.hero h1{font-size:34px}.row,.grid2{grid-template-columns:1fr}.card{padding:16px}}
 </style>
 </head>
 
 <body>
 
 <header>
+  <div>
+    <div class="logo">Bastar <span>Go</span> 🌿</div>
+    <div class="location">📍 Jagdalpur, Bastar</div>
+  </div>
 
-<div>
-<div class="logo">
-Bastar <span>Go</span> 🌿
-</div>
-
-<div class="location">
-📍 Jagdalpur, Bastar
-</div>
-</div>
-
-<button class="header-btn" onclick="scrollToBooking()">
-Book Ride
-</button>
-
+  <div class="top-actions">
+    <button class="dark" onclick="showPanel('customer')">Customer</button>
+    <button class="gold" onclick="showPanel('rider')">Rider</button>
+  </div>
 </header>
 
+<main>
+
 <section class="hero">
+  <h1>Chalo Bastar,<br><span>Chalo Bastar Go!</span></h1>
+  <p>
+    🏍️ Bike • 🛺 Auto • 🚕 Cab • 📦 Delivery<br>
+    Local booking, real-time status, rider assignment aur WhatsApp support.
+  </p>
+</section>
 
-<h1>
-Chalo Bastar,<br>
-<span>Chalo Bastar Go!</span>
-</h1>
-
-<p>
-🏍️ Bike • 🛺 Auto • 🚕 Cab • 📦 Delivery
-<br>
-Bastar ki apni local mobility service.
-Fast, safe aur affordable.
-</p>
-
-<div class="hero-buttons">
-
-<button class="primary" onclick="scrollToBooking()">
-🚀 Book Your Ride
-</button>
-
-<button class="whatsapp" onclick="whatsappHelp()">
-💬 WhatsApp
-</button>
-
+<div class="tabs">
+  <button class="tab active" id="tabCustomer" onclick="showPanel('customer')">📍 Customer</button>
+  <button class="tab" id="tabRider" onclick="showPanel('rider')">🏍️ Rider</button>
+  <button class="tab" id="tabAdmin" onclick="showPanel('admin')">🛠️ Admin</button>
 </div>
+
+
+<!-- CUSTOMER -->
+
+<section class="panel active" id="customer">
+
+  <div class="card">
+
+    <h2>📍 Book Your Ride</h2>
+
+    <div class="services">
+
+      <button class="service active" data-service="Bike">
+        🏍️ Bike
+        <small>₹10 + ₹10/km</small>
+      </button>
+
+      <button class="service" data-service="Auto">
+        🛺 Auto
+        <small>₹20 + ₹14/km</small>
+      </button>
+
+      <button class="service" data-service="Cab">
+        🚕 Cab
+        <small>₹40 + ₹18/km</small>
+      </button>
+
+      <button class="service" data-service="Delivery">
+        📦 Delivery
+        <small>₹25 + ₹12/km</small>
+      </button>
+
+    </div>
+
+
+    <label>Pickup Location</label>
+
+    <input
+      id="pickup"
+      placeholder="Jaise: Sanjay Market"
+    >
+
+
+    <label>Drop Location</label>
+
+    <input
+      id="drop"
+      placeholder="Jaise: Dharampura"
+    >
+
+
+    <div class="row">
+
+      <div>
+
+        <label>Phone Number</label>
+
+        <input
+          id="phone"
+          type="tel"
+          maxlength="10"
+          inputmode="numeric"
+          placeholder="10 digit mobile"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>Payment</label>
+
+        <select id="paymentMethod">
+
+          <option value="cash">
+            Cash
+          </option>
+
+          <option value="upi">
+            UPI
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn btn-gray"
+      onclick="useMyLocation()"
+    >
+      📍 Use My Current Location
+    </button>
+
+
+    <div
+      id="locationInfo"
+      class="small"
+      style="margin-top:7px"
+    ></div>
+
+
+    <div class="fare">
+
+      <div>
+
+        <b>Estimated Fare</b>
+
+        <div
+          class="small"
+          id="distanceText"
+        >
+          Pickup aur drop enter karein
+        </div>
+
+      </div>
+
+      <div
+        class="fare-value"
+        id="fareAmount"
+      >
+        ₹0
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn btn-green"
+      onclick="bookRide()"
+    >
+      🚀 Book Ride
+    </button>
+
+
+    <button
+      class="btn btn-gold"
+      onclick="whatsappHelp()"
+    >
+      💬 WhatsApp Help
+    </button>
+
+
+    <div
+      class="small"
+      style="margin-top:9px"
+    >
+      Fare estimated hai.
+      Final fare route/rider confirmation par verify hoga.
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>📦 My Latest Booking</h2>
+
+    <div
+      id="customerStatus"
+      class="small"
+    >
+      Abhi koi booking nahi.
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>📋 My Booking History</h2>
+
+    <div
+      id="customerHistory"
+      class="list small"
+    >
+      Login hone ke baad bookings dikhenge.
+    </div>
+
+  </div>
 
 </section>
 
-<main class="container" id="booking">
 
-<div class="card">
 
-<h2>
-📍 Book Your Ride
-</h2>
+<!-- RIDER -->
 
-<div class="services">
+<section class="panel" id="rider">
 
-<button class="service active" data-service="Bike">
-🏍️ Bike
-<small>₹10 + ₹10/km</small>
-</button>
+  <div
+    class="card"
+    id="riderLoginCard"
+  >
 
-<button class="service" data-service="Auto">
-🛺 Auto
-<small>₹20 + ₹14/km</small>
-</button>
+    <h2>🏍️ Rider Login</h2>
 
-<button class="service" data-service="Cab">
-🚕 Cab
-<small>₹40 + ₹18/km</small>
-</button>
+    <div class="notice">
+      Rider account Firebase Authentication se login karega.
+      Account admin Firebase Console se banayega.
+    </div>
 
-<button class="service" data-service="Delivery">
-📦 Delivery
-<small>₹25 + ₹12/km</small>
-</button>
 
-</div>
+    <label>Email</label>
 
-<label>Pickup Location</label>
+    <input
+      id="riderEmail"
+      type="email"
+      placeholder="rider@email.com"
+    >
 
-<input
-id="pickup"
-type="text"
-placeholder="Jaise: Sanjay Market"
-/>
 
-<label>Drop Location</label>
+    <label>Password</label>
 
-<input
-id="drop"
-type="text"
-placeholder="Jaise: Chitrakote"
-/>
+    <input
+      id="riderPassword"
+      type="password"
+      placeholder="Password"
+    >
 
-<label>Phone Number</label>
 
-<input
-id="phone"
-type="tel"
-maxlength="10"
-inputmode="numeric"
-placeholder="10 digit mobile number"
-/>
+    <button
+      class="btn btn-green"
+      onclick="riderLogin()"
+    >
+      Login
+    </button>
 
-<div class="fare">
 
-<div>
+    <div
+      id="riderLoginMsg"
+      class="small"
+      style="margin-top:8px"
+    ></div>
 
-<div class="fare-title">
-Estimated Fare
-</div>
+  </div>
 
-<div class="distance" id="distanceText">
-Pickup aur drop enter karein
-</div>
 
-</div>
+  <div
+    class="card hidden"
+    id="riderPanel"
+  >
 
-<div class="fare-value" id="fareAmount">
-₹0
-</div>
+    <h2>🏍️ Rider Dashboard</h2>
 
-</div>
+    <div
+      class="userbar"
+      id="riderUser"
+    ></div>
 
-<button class="book" id="bookButton" onclick="bookRide()">
-💬 Continue on WhatsApp
-</button>
 
-<div class="note">
-Fare route distance ke hisaab se estimated hai.
-Final fare booking confirm karte waqt verify hoga.
-</div>
+    <div class="row">
 
-</div>
+      <button
+        class="btn btn-green"
+        id="riderOnlineBtn"
+        onclick="toggleRiderOnline()"
+      >
+        🟢 Go Online
+      </button>
 
-<div class="features">
 
-<div class="feature">
-<div class="feature-icon">🛡️</div>
-<h3>Safe & Secure</h3>
-<p>Verified riders aur secure booking process.</p>
-</div>
+      <button
+        class="btn btn-red"
+        onclick="logout()"
+      >
+        Logout
+      </button>
 
-<div class="feature">
-<div class="feature-icon">⚡</div>
-<h3>Quick Pickup</h3>
-<p>Nearby rider ko booking request.</p>
-</div>
+    </div>
 
-<div class="feature">
-<div class="feature-icon">₹</div>
-<h3>Affordable</h3>
-<p>Bastar ke local customers ke liye.</p>
-</div>
 
-<div class="feature">
-<div class="feature-icon">🎧</div>
-<h3>Local Support</h3>
-<p>Jagdalpur mein direct support.</p>
-</div>
+    <div
+      id="riderOnlineStatus"
+      class="status"
+    >
+      Offline
+    </div>
 
-</div>
 
-<section class="explore">
+    <div class="mapbox">
 
-<h2>🌿 Explore Bastar</h2>
+      <b>📍 Rider Location</b>
 
-<p>
-Beautiful Bastar ko explore karne ke liye
-Bastar Go ke saath aasaan travel.
-</p>
+      <div
+        id="riderLocationText"
+        class="small"
+      >
+        Location not started.
+      </div>
 
-<div class="places">
 
-<div class="place">💧 Chitrakote</div>
-<div class="place">🌊 Tirathgarh</div>
-<div class="place">🌳 Kanger Valley</div>
-<div class="place">🛕 Danteshwari</div>
-<div class="place">🏛️ Barsoor</div>
-<div class="place">📍 Jagdalpur</div>
+      <button
+        class="btn btn-gray"
+        onclick="startRiderLocation()"
+      >
+        Start / Refresh Location
+      </button>
 
-</div>
+    </div>
+
+
+    <h3 style="margin-top:18px">
+      Ride Requests
+    </h3>
+
+
+    <div
+      id="riderBookings"
+      class="list small"
+    >
+      Online hone ke baad assigned requests yahan aayengi.
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ADMIN -->
+
+<section class="panel" id="admin">
+
+  <div
+    class="card"
+    id="adminLoginCard"
+  >
+
+    <h2>🛠️ Admin Login</h2>
+
+    <div class="notice">
+      Admin access sirf Firebase Authentication + Firestore role se milega.
+    </div>
+
+
+    <label>Email</label>
+
+    <input
+      id="adminEmail"
+      type="email"
+      placeholder="admin@email.com"
+    >
+
+
+    <label>Password</label>
+
+    <input
+      id="adminPassword"
+      type="password"
+      placeholder="Password"
+    >
+
+
+    <button
+      class="btn btn-green"
+      onclick="adminLogin()"
+    >
+      Admin Login
+    </button>
+
+
+    <div
+      id="adminLoginMsg"
+      class="small"
+      style="margin-top:8px"
+    ></div>
+
+  </div>
+
+
+  <div
+    class="card hidden"
+    id="adminPanel"
+  >
+
+    <h2>🛠️ Bastar Go Admin</h2>
+
+    <div
+      class="userbar"
+      id="adminUser"
+    ></div>
+
+
+    <button
+      class="btn btn-red"
+      onclick="logout()"
+    >
+      Logout
+    </button>
+
+
+    <div
+      class="grid2"
+      style="margin-top:12px"
+    >
+
+      <div class="kpi">
+        Total Bookings
+        <b id="kpiBookings">0</b>
+      </div>
+
+      <div class="kpi">
+        Pending
+        <b id="kpiPending">0</b>
+      </div>
+
+      <div class="kpi">
+        Active Riders
+        <b id="kpiRiders">0</b>
+      </div>
+
+      <div class="kpi">
+        Completed
+        <b id="kpiCompleted">0</b>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="card hidden"
+    id="adminBookingsCard"
+  >
+
+    <h2>📋 Live Bookings</h2>
+
+    <div
+      id="adminBookings"
+      class="list small"
+    ></div>
+
+  </div>
+
+
+  <div
+    class="card hidden"
+    id="adminRidersCard"
+  >
+
+    <h2>🏍️ Riders</h2>
+
+    <div
+      id="adminRiders"
+      class="list small"
+    ></div>
+
+  </div>
 
 </section>
 
 </main>
 
+
+
 <footer>
 
-<div class="footer-logo">
-Bastar <span>Go</span> 🌿
-</div>
+  <div
+    style="font-size:22px;font-weight:900"
+  >
+    Bastar <span>Go</span> 🌿
+  </div>
 
-<p>Bastar Mein, Har Safar Aasaan.</p>
+  <p style="margin-top:6px">
+    Bastar Mein, Har Safar Aasaan.
+  </p>
 
-<p>🏍️ Bike • 🛺 Auto • 🚕 Cab • 📦 Delivery</p>
-
-<p>© 2026 Bastar Go • Jagdalpur, Bastar</p>
+  <p style="margin-top:5px;font-size:12px">
+    © 2026 Bastar Go • Jagdalpur, Bastar
+  </p>
 
 </footer>
 
 
+
 <script type="module">
 
-/* ================================
-   FIREBASE
-   ================================ */
+import {
+  initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 import {
-initializeApp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  getAuth,
+  onAuthStateChanged,
+  signInAnonymously,
+  signInWithEmailAndPassword,
+  signOut
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
 
 import {
-getFirestore,
-collection,
-addDoc,
-serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  getFirestore,
+  collection,
+  addDoc,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  query,
+  where,
+  orderBy,
+  onSnapshot,
+  serverTimestamp,
+  limit
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 
 
 const firebaseConfig = {
 
-apiKey:
-"AIzaSyA5saktNZ4QummtW9GyGG_HN3wZU2_jwsc",
+  apiKey:
+  "AIzaSyA5saktNZ4QummtW9GyGG_HN3wZU2_jwsc",
 
-authDomain:
-"bastar-go.firebaseapp.com",
+  authDomain:
+  "bastar-go.firebaseapp.com",
 
-projectId:
-"bastar-go",
+  projectId:
+  "bastar-go",
 
-storageBucket:
-"bastar-go.firebasestorage.app",
+  storageBucket:
+  "bastar-go.firebasestorage.app",
 
-messagingSenderId:
-"272034059157",
+  messagingSenderId:
+  "272034059157",
 
-appId:
-"1:272034059157:web:db591333c8fab0f3085c9c",
+  appId:
+  "1:272034059157:web:db591333c8fab0f3085c9c",
 
-measurementId:
-"G-6T088B7LMF"
+  measurementId:
+  "G-6T088B7LMF"
 
 };
+
 
 
 const app =
 initializeApp(firebaseConfig);
 
+
+const auth =
+getAuth(app);
+
+
 const db =
 getFirestore(app);
 
 
-/* ================================
-   WHATSAPP
-   ================================ */
 
 const WHATSAPP_NUMBER =
 "919581981332";
 
 
-/* ================================
-   FARE RATES
-   ================================ */
 
 const rates = {
 
-Bike:{
-base:10,
-perKm:10
-},
+  Bike:{
+    base:10,
+    perKm:10
+  },
 
-Auto:{
-base:20,
-perKm:14
-},
+  Auto:{
+    base:20,
+    perKm:14
+  },
 
-Cab:{
-base:40,
-perKm:18
-},
+  Cab:{
+    base:40,
+    perKm:18
+  },
 
-Delivery:{
-base:25,
-perKm:12
-}
+  Delivery:{
+    base:25,
+    perKm:12
+  }
 
 };
+
+
+
+const routes = {
+
+  "jagdalpur|chitrakote":38,
+
+  "jagdalpur|chitrakoot":38,
+
+  "sanjay market|chitrakote":38,
+
+  "sanjay market|chitrakoot":38,
+
+  "jagdalpur|tirathgarh":32,
+
+  "jagdalpur|tirathgarh waterfall":32,
+
+  "jagdalpur|danteshwari temple":2,
+
+  "jagdalpur|danteshwari mandir":2,
+
+  "jagdalpur|geedam":80,
+
+  "jagdalpur|dantewada":85,
+
+  "jagdalpur|barsoor":75,
+
+  "jagdalpur|kondagaon":65,
+
+  "sanjay market|danteshwari temple":2,
+
+  "sanjay market|dharampura":5
+
+};
+
 
 
 let selectedService =
 "Bike";
 
 
-/* ================================
-   BASTAR ROUTES
-   ================================ */
-
-const routes = {
-
-"jagdalpur|chitrakote":38,
-"jagdalpur|chitrakoot":38,
-"sanjay market|chitrakote":38,
-"sanjay market|chitrakoot":38,
-
-"jagdalpur|tirathgarh":32,
-"jagdalpur|tirathgarh waterfall":32,
-
-"jagdalpur|danteshwari temple":2,
-"jagdalpur|danteshwari mandir":2,
-
-"jagdalpur|geedam":80,
-"jagdalpur|dantewada":85,
-"jagdalpur|barsoor":75,
-"jagdalpur|kondagaon":65,
-
-"sanjay market|danteshwari temple":2
-
-};
+let currentUser =
+null;
 
 
-/* ================================
-   CLEAN LOCATION
-   ================================ */
+let currentRole =
+"customer";
 
-function clean(text){
 
-return text
+let customerUnsub =
+null;
+
+
+let riderUnsub =
+null;
+
+
+let adminBookingsUnsub =
+null;
+
+
+let adminRidersUnsub =
+null;
+
+
+let riderOnline =
+false;
+
+
+let riderWatchId =
+null;
+
+
+let riderLat =
+null;
+
+
+let riderLng =
+null;
+
+
+
+const clean =
+s =>
+(s || "")
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ");
 
-}
 
-
-/* ================================
-   DISTANCE
-   ================================ */
 
 function getDistance(){
 
-const pickup =
-clean(
-document.getElementById("pickup").value
-);
-
-const drop =
-clean(
-document.getElementById("drop").value
-);
-
-if(!pickup || !drop){
-return 0;
-}
-
-const key =
-pickup + "|" + drop;
-
-const reverse =
-drop + "|" + pickup;
-
-if(routes[key]){
-return routes[key];
-}
-
-if(routes[reverse]){
-return routes[reverse];
-}
+  const p =
+  clean(
+    document
+    .getElementById("pickup")
+    .value
+  );
 
 
-/* Unknown route temporary estimate */
+  const d =
+  clean(
+    document
+    .getElementById("drop")
+    .value
+  );
 
-return 5;
+
+  if(!p || !d)
+  return 0;
+
+
+  return
+    routes[p+"|"+d]
+    ??
+    routes[d+"|"+p]
+    ??
+    5;
 
 }
 
 
-/* ================================
-   UPDATE FARE
-   ================================ */
 
 function updateFare(){
 
-const distance =
-getDistance();
+  const distance =
+  getDistance();
 
-const fare =
-document.getElementById("fareAmount");
 
-const distanceText =
-document.getElementById("distanceText");
+  const fare =
+  document
+  .getElementById("fareAmount");
 
-if(!distance){
 
-fare.innerText =
-"₹0";
+  const txt =
+  document
+  .getElementById("distanceText");
 
-distanceText.innerText =
-"Pickup aur drop enter karein";
 
-return;
+  if(!distance){
+
+    fare.textContent =
+    "₹0";
+
+    txt.textContent =
+    "Pickup aur drop enter karein";
+
+    return;
+
+  }
+
+
+  const r =
+  rates[selectedService];
+
+
+  fare.textContent =
+  "₹" +
+  Math.round(
+    r.base +
+    distance * r.perKm
+  );
+
+
+  txt.textContent =
+  distance +
+  " km • " +
+  selectedService;
 
 }
 
-const rate =
-rates[selectedService];
 
-const amount =
-Math.round(
-rate.base +
-(distance * rate.perKm)
-);
-
-fare.innerText =
-"₹" + amount;
-
-distanceText.innerText =
-distance +
-" km • " +
-selectedService;
-
-}
-
-
-/* ================================
-   SERVICE BUTTONS
-   ================================ */
 
 document
 .querySelectorAll(".service")
-.forEach(button => {
+.forEach(
+  b =>
+  b.addEventListener(
+    "click",
+    () => {
 
-button.addEventListener(
-"click",
-function(){
-
-document
-.querySelectorAll(".service")
-.forEach(item =>
-item.classList.remove("active")
-);
-
-this.classList.add("active");
-
-selectedService =
-this.dataset.service;
-
-updateFare();
-
-}
-);
-
-});
+      document
+      .querySelectorAll(".service")
+      .forEach(
+        x =>
+        x.classList.remove(
+          "active"
+        )
+      );
 
 
-/* ================================
-   INPUTS
-   ================================ */
+      b.classList.add("active");
 
-document
-.getElementById("pickup")
-.addEventListener(
-"input",
-updateFare
-);
 
-document
-.getElementById("drop")
-.addEventListener(
-"input",
-updateFare
+      selectedService =
+      b.dataset.service;
+
+
+      updateFare();
+
+    }
+  )
 );
 
 
-/* ================================
-   SCROLL
-   ================================ */
 
-window.scrollToBooking =
-function(){
+["pickup","drop"]
+.forEach(
+  id =>
+  document
+  .getElementById(id)
+  .addEventListener(
+    "input",
+    updateFare
+  )
+);
 
-document
-.getElementById("booking")
-.scrollIntoView({
-behavior:"smooth"
-});
+
+
+window.showPanel =
+(name) => {
+
+  ["customer","rider","admin"]
+  .forEach(
+    x => {
+
+      document
+      .getElementById(x)
+      .classList
+      .toggle(
+        "active",
+        x === name
+      );
+
+
+      document
+      .getElementById(
+        "tab" +
+        x.charAt(0).toUpperCase() +
+        x.slice(1)
+      )
+      .classList
+      .toggle(
+        "active",
+        x === name
+      );
+
+    }
+  );
 
 };
 
 
-/* ================================
-   BOOK RIDE
-   ================================ */
 
-window.bookRide =
-async function(){
+window.useMyLocation =
+() => {
 
-const pickup =
-document
-.getElementById("pickup")
-.value
-.trim();
+  if(!navigator.geolocation){
 
-const drop =
-document
-.getElementById("drop")
-.value
-.trim();
+    alert(
+      "Is device me location support nahi hai."
+    );
 
-const phone =
-document
-.getElementById("phone")
-.value
-.trim();
+    return;
 
-const distance =
-getDistance();
-
-const rate =
-rates[selectedService];
-
-const fare =
-Math.round(
-rate.base +
-(distance * rate.perKm)
-);
-
-const button =
-document.getElementById("bookButton");
+  }
 
 
-if(!pickup || !drop){
+  navigator
+  .geolocation
+  .getCurrentPosition(
 
-alert(
-"Please pickup aur drop location enter karein."
-);
+    pos => {
 
-return;
-
-}
-
-
-if(!/^[0-9]{10}$/.test(phone)){
-
-alert(
-"Please valid 10 digit mobile number enter karein."
-);
-
-return;
-
-}
+      riderLat =
+      pos.coords.latitude;
 
 
-button.disabled = true;
-
-button.innerText =
-"⏳ Booking save ho rahi hai...";
+      riderLng =
+      pos.coords.longitude;
 
 
-try{
+      document
+      .getElementById(
+        "locationInfo"
+      )
+      .textContent =
+      `Current GPS: ${
+        riderLat.toFixed(5)
+      }, ${
+        riderLng.toFixed(5)
+      }`;
 
 
-/* ================================
-   SAVE BOOKING TO FIRESTORE
-   ================================ */
+      const p =
+      document
+      .getElementById(
+        "pickup"
+      );
 
-const bookingData = {
 
-customerId: phone,
+      if(!p.value)
+      p.value =
+      "My Current Location";
 
-customerPhone: phone,
 
-service: selectedService,
+      updateFare();
 
-pickup: pickup,
+    },
 
-drop: drop,
+    () =>
+    alert(
+      "Location permission allow karein."
+    )
 
-distance: distance,
-
-fare: fare,
-
-paymentStatus: "pending",
-
-status: "pending",
-
-riderId: "",
-
-createdAt: serverTimestamp()
+  );
 
 };
 
 
-const bookingRef =
-await addDoc(
-collection(db,"Bookings"),
-bookingData
-);
-
-
-const bookingId =
-bookingRef.id;
-
-
-/* ================================
-   WHATSAPP MESSAGE
-   ================================ */
-
-const message =
-
-"Bastar Go Booking\n\n" +
-
-"Booking ID: " +
-bookingId +
-
-"\n\nService: " +
-selectedService +
-
-"\n\nPickup: " +
-pickup +
-
-"\n\nDrop: " +
-drop +
-
-"\n\nDistance: " +
-distance +
-" km" +
-
-"\n\nEstimated Fare: ₹" +
-fare +
-
-"\n\nCustomer Phone: " +
-phone;
-
-
-window.open(
-
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message),
-
-"_blank"
-
-);
-
-
-alert(
-"Booking successfully created!\n\nBooking ID: " +
-bookingId
-);
-
-
-button.disabled = false;
-
-button.innerText =
-"💬 Continue on WhatsApp";
-
-
-}
-catch(error){
-
-console.error(error);
-
-alert(
-"Booking save nahi ho payi.\n\n" +
-error.message
-);
-
-button.disabled = false;
-
-button.innerText =
-"💬 Continue on WhatsApp";
-
-}
-
-};
-
-
-/* ================================
-   WHATSAPP HELP
-   ================================ */
 
 window.whatsappHelp =
-function(){
+() => {
 
-const message =
-"Hello Bastar Go, mujhe ride booking ke liye help chahiye.";
+  const msg =
+  "Hello Bastar Go, mujhe ride booking ke liye help chahiye.";
 
-window.open(
 
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message),
+  window.open(
 
-"_blank"
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(msg),
 
-);
+    "_blank"
+
+  );
 
 };
 
 
-/* ================================
-   INITIAL
-   ================================ */
 
-updateFare();
+async function ensureCustomerAuth(){
 
-</script>
+  if(!auth.currentUser)
+  await signInAnonymously(auth);
 
-</body>
-</html>
+
+  return auth.currentUser;
+
+}
+
+
+
+window.bookRide =
+async() => {
+
+  const pickup =
+  document
+  .getElementById("pickup")
+  .value
+  .trim();
+
+
+  const drop =
+  document
+  .getElementById("drop")
+  .value
+  .trim();
+
+
+  const phone =
+  document
+  .getElementById("phone")
+  .value
+  .trim();
+
+
+  if(!pickup || !drop){
+
+    return alert(
+      "Pickup aur drop location enter karein."
+    );
+
+  }
+
+
+  if(!/^[0-9]{10}$/.test(phone)){
+
+    return alert(
+      "Please valid 10 digit mobile number enter karein."
+    );
+
+  }
+
+
+  try{
+
+    const user =
+    await ensureCustomerAuth();
+
+
+    const distance =
+    getDistance();
+
+
+    const fare =
+    Math.round(
+      rates[selectedService].base +
+      distance *
+      rates[selectedService].perKm
+    );
+
+
+    const ref =
+    await addDoc(
+      collection(
+        db,
+        "Bookings"
+      ),
+      {
+
+        customerId:
+        user.uid,
+
+        customerPhone:
+        phone,
+
+        service:
+        selectedService,
+
+        pickup,
+        drop,
+
+        distance,
+        fare,
+
+        paymentMethod:
+        document
+        .getElementById(
+          "paymentMethod"
+        )
+        .value,
+
+        paymentStatus:
+        "pending",
+
+        status:
+        "pending",
+
+        riderId:
+        "",
+
+        pickupLat:
+        riderLat ||
+        null,
+
+        pickupLng:
+        riderLng ||
+        null,
+
+        createdAt:
+        serverTimestamp(),
+
+        updatedAt:
+        serverTimestamp()
+
+      }
+    );
+
+
+    const bookingId =
+    ref.id;
+
+
+    const message =
+    "Bastar Go Booking\n\n" +
+
+    "Booking ID: " +
+    bookingId +
+
+    "\n\nService: " +
+    selectedService +
+
+    "\n\nPickup: " +
+    pickup +
+
+    "\n\nDrop: " +
+    drop +
+
+    "\n\nDistance: " +
+    distance +
+    " km" +
+
+    "\n\nEstimated Fare: ₹" +
+    fare +
+
+    "\n\nCustomer Phone: " +
+    phone +
+
+    "\n\nPayment: " +
+    document
+    .getElementById(
+      "paymentMethod"
+    )
+    .value;
+
+
+    window.open(
+
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(
+        message
+      ),
+
+      "_blank"
+
+    );
+
+
+    document
+    .getElementById(
+      "customerStatus"
+    )
+    .innerHTML =
+
+    `<div class="status pending">
+      <b>Booking Created</b><br>
+      ID: ${bookingId}<br>
+      Searching for rider...
+    </div>`;
+
+
+    listenCustomerBookings(
+      user.uid
+    );
+
+  }
+
+  catch(e){
+
+    console.error(e);
+
+    alert(
+      "Booking save nahi hui: " +
+      e.message
+    );
+
+  }
+
+};
+
+
+
+function statusClass(s){
+
+  return
+    s === "completed"
+    ? "completed"
+
+    : s === "cancelled"
+    ? "cancelled"
+
+    : s === "accepted" ||
+      s === "arrived" ||
+      s === "started"
+    ? "accepted"
+
+    : "pending";
+
+}
+
+
+
+function bookingHTML(
+  b,
+  admin=false
+){
+
+  const d =
+  b.data
+  ? b.data()
+  : b;
+
+
+  const id =
+  b.id ||
+  d.bookingId ||
+  "";
+
+
+  return
+
+  `<div class="booking">
+
+    <strong>
+      ${d.service || "Ride"}
+      •
+      ${d.pickup || ""}
+      →
+      ${d.drop || ""}
+    </strong>
+
+    <div class="meta">
+
+      ID: ${id}<br>
+
+      Distance:
+      ${d.distance || 0}
+      km •
+      Fare:
+      ₹${d.f
